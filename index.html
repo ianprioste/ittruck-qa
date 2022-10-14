@@ -30,7 +30,7 @@
 
 </head>
 
-<body id="body" class="d-flex flex-column justify-content-center invisible">
+<body id="body" class="d-flex flex-column justify-content-center">
   <div class="container">
     <div class="d-flex justify-content-center" style="padding-top:3vh ;">
       <img src="/scr/img/logo.png" alt="">
@@ -46,7 +46,7 @@
       </select>
       </div>
       <div class="col-md-6">
-        <select id="tendas"  class="form-control" style="margin-top:1vh">
+        <select id="tendas"  class="form-control selectpicker" style="margin-top:1vh" data-live-search="true">
           <option>Selecione a Tenda</option>
       </select>
       </div>
@@ -109,7 +109,7 @@
 
 <script language="JavaScript">
 
-  var password;
+  /*var password;
   var pass1="5511truck"
 
   
@@ -124,11 +124,13 @@
     }
 
   }
+*/
+ $(function() {
+  $('.selectpicker').selectpicker();
+});
 
- 
 
-
-</script>
+</script-->
 
 
 
