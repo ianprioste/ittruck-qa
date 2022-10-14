@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ian Prioste & Vinicius Carolino">
+  <meta name="description" content="MVP - IT Truck">
+  <meta name="robots" content="nofollow">
+  
+
+
+
+  <link rel="icon" href="/scr/img/logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon-precomposed" href="/scr/img/logo.png" type="image/x-icon">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+  <script type="module" src="/js/script.js"></script> 
+
+
+  <title>MVP IT Truck - CHECK-IN</title>
+
+
+</head>
+
+<body id="body" class="d-flex flex-column justify-content-center invisible">
+  <div class="container">
+    <div class="d-flex justify-content-center" style="padding-top:3vh ;">
+      <img src="/scr/img/logo.png" alt="">
+    </div>
+    <div class="d-flex justify-content-center">
+      <h1>Validação QR-CODE</h1>
+    </div>
+
+    <div class= "row d-flex justify-content-center">
+      <div class="col-md-6">
+        <select id="sites"  class="form-control" style="margin-top:1vh">
+          <option>Selecione o Site</option>
+      </select>
+      </div>
+      <div class="col-md-6">
+        <select id="tendas"  class="form-control" style="margin-top:1vh">
+          <option>Selecione a Tenda</option>
+      </select>
+      </div>
+    </div>
+    <div class="container" style="padding-top: 5vh;">
+      <div class="d-flex justify-content-center">
+        <video id="qr-video" style=" width: 100%"></video>
+      </div>
+      <div class="invisible">
+        <b>Detected QR code: </b>
+        <span id="cam-qr-result">None</span>
+        <br>
+        <b>Last detected at: </b>
+        <span id="cam-qr-result-timestamp"></span>
+        <br>
+      </div>
+  </div>
+
+    </div>
+      
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1><span id="resposta"></span></h1>  
+          </div>
+          <div class="modal-footer" style="justify-content: center;">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="start-button" >FECHAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+ <!--   <div id="bottom">
+      <div id="menu" class="center">
+        <div class="item">
+          <img src="/scr/icons/icon-home.svg" alt="">
+        </div>
+        <div class="item">
+          <img src="/scr/icons/icon-qrcode.svg" alt="">
+        </div>
+        <div class="item">
+          <img src="/scr/icons/icon-profile.svg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+-->
+
+  <script type="module" src="/js/qr-scanner.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+</body>
+
+<script language="JavaScript">
+
+  var password;
+  var pass1="5511truck"
+
+  
+  while(password!=pass1){
+    password=prompt('Please enter your password to view this page!','');
+
+  if(password==pass1){
+    document.getElementById("body").classList.remove('invisible');
+
+  } else{
+    alert('Password incorrect');
+    }
+
+  }
+
+ 
+
+
+</script>
+
+
+
+</html>

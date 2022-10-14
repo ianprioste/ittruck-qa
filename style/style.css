@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root{
+    --color-blue:#00617F;
+    --color-gray: #515151;
+    --color-green: #89D329;
+    --font: 'Montserrat',Arial, Helvetica, sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    box-sizing: border-box; /*forçar a caixa a ter o tamanho do width*/
+
+    font: var(--font);
+
+}
+
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* TEXTOS */
+
+h1{
+
+    text-align: center;
+    margin: 0;
+
+    font: normal 500 24px/29px var(--font);
+
+    color: var(--color-blue);
+     
+   
+}
+
+h2{
+    text-align: center;
+    margin: 0;
+
+    font: 300 12px;
+
+    font-weight:300;
+    font-size: 12px;
+    color: var(--color-green);
+}
+
+p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    color: var(--color-gray);
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#mobile{
+    
+    position: absolute;
+
+    margin-top: 20px;
+
+    width: 350px;
+    height: 850px;
+
+/*  width: 90vw;
+    height: 90vh;*/
+    
+    background: #FFFFFF;
+    border-radius: 30px;
+    border: 0.5px solid #B8B8B8;
+
+    padding-bottom: 41px;
+
+
+}
+
+#mobile-center img{
+
+    margin-top: 10%;
+
+    width: 100%;
+}
+
+
+#top{
+    padding-top: 32px;
+}
+
+#top-home{
+    background: url("/scr/img/city.png") no-repeat center;
+
+    height: 209px;
+    top: 108px;
+}
+
+#top-home img{
+    padding-top: 74px;
+}
+
+#location p{
+    
+    margin-left: 10px;
+
+    color: #0091DF;
+    text-align: center;
+}
+
+#buttons{
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+button{
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    width: 90%;
+    height: 70px;
+    margin-top: 20px;
+
+    border: 0.5px solid #B8B8B8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+    background-color: white;    
+    color: var(--color-blue);
+    
+}
+
+button .button-home{
+    text-align: center;
+}
+
+button .button-img{
+
+    width: 35%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+
+button .button-img svg {
+
+    margin: auto;
+
+}
+
+
+button .button-img .img{
+    margin: auto;
+
+    position: absolute;
+    top:10px;
+    left: 40px;
+
+}
+
+
+button .button-title{
+
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button:hover{
+
+    background-color: var(--color-blue);
+    color: white;
+
+}
+
+/* MENU */ 
+
+#bottom{
+
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+}
+
+#bottom #menu .item{
+    padding: 40px;
+}
+
+
+
+/* QR CODE */
+
+#container-qrcode{
+    padding-top: 30px;
+    width: 100%;
+
+}
+
+#container-qrcode #tenda{
+    width: 100%;
+    padding: 3%;
+
+}
+
+#container-qrcode #tenda h2{
+    font-size: 20px;
+}
+
+#container-qrcode #tenda select{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.result {
+    background-color: green;
+    color: #fff;
+    padding: 20px;
+  }
+
+.code-scanner{
+    margin-top: 20px;
+}
+
+.reader{
+    width: 90%;
+    border: 0;
+}
+
+  .resultado{
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .row {
+    display: flex;
+  }
