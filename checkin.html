@@ -25,29 +25,29 @@
   <script type="module" src="/js/script.js"></script> 
 
 
-  <title>MVP IT Truck QA - CHECK-IN</title>
+  <title>MVP IT Truck QA - AUTO CHECK-IN</title>
 
 
 </head>
 
-<body id="body" class="d-flex flex-column justify-content-center invisible">
+<body id="body" class="d-flex flex-column justify-content-center">
   <div class="container">
     <div class="d-flex justify-content-center" style="padding-top:3vh ;">
       <img src="/scr/img/logo.png" alt="">
     </div>
     <div class="d-flex justify-content-center">
-      <h1>Validação QR-CODE</h1>
+      <h1>AUTO CHECK-IN</h1>
     </div>
 
     <div class= "row d-flex justify-content-center">
       <div class="col-md-6">
-        <select id="sites"  class="form-control" style="margin-top:1vh">
-          <option>Selecione o Site</option>
+        <select id="sites"  class="form-control invisible" style="margin-top:1vh" disabled>
+          <option selected="selected">21</option>
       </select>
       </div>
       <div class="col-md-6">
-        <select id="tendas"  class="form-control" style="margin-top:1vh">
-          <option>Selecione a Tenda</option>
+        <select id="tendas"  class="form-control invisible" style="margin-top:1vh" disabled>
+          <option selected>433</option>
       </select>
       </div>
     </div>
@@ -74,62 +74,15 @@
         <div class="modal-content">
           <div class="modal-body">
             <h1><span id="resposta"></span></h1>  
-          </div>
-          <div class="modal-footer" style="justify-content: center;">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="start-button" >FECHAR</button>
+            <p>Fechamento automático em 5s</p>
           </div>
         </div>
       </div>
     </div>
   
-
-
- <!--   <div id="bottom">
-      <div id="menu" class="center">
-        <div class="item">
-          <img src="/scr/icons/icon-home.svg" alt="">
-        </div>
-        <div class="item">
-          <img src="/scr/icons/icon-qrcode.svg" alt="">
-        </div>
-        <div class="item">
-          <img src="/scr/icons/icon-profile.svg" alt="">
-        </div>
-      </div>
-
-    </div>
-  </div>
--->
-
   <script type="module" src="/js/qr-scanner.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-
 </body>
-
-<script language="JavaScript">
-
-  var password;
-  var pass1="5511truck"
-
-  
-  while(password!=pass1){
-    password=prompt('Please enter your password to view this page!','');
-
-  if(password==pass1){
-    document.getElementById("body").classList.remove('invisible');
-
-  } else{
-    alert('Password incorrect');
-    }
-
-  }
-
- 
-
-
-</script>
-
-
 
 </html>

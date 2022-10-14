@@ -58,6 +58,11 @@ function setResult(label, result) {
                 console.log(data);
 
                 $('#exampleModal').modal('show'); // Abrir modal
+
+                setTimeout(function() {
+                    $('#exampleModal').modal('hide');
+                    reading=true;
+                }, 5000);
             
 
                 if (data.status == '200') // Cadastro realizado com sucesso
@@ -79,7 +84,7 @@ function setResult(label, result) {
                 },
                 error: function (jqXHR, error, errorThrown) { //Pessoa nao tem pre registro
                     $('#exampleModal').modal('show'); // Abrir modal
-                    document.getElementById("resposta").innerHTML = "QR CODE INVÁLIDO"
+                    document.getElementById("resposta").innerHTML = "Selecione o Site"
 
                 }
 
@@ -93,8 +98,8 @@ function setResult(label, result) {
 
     }    if (tendaId == 0 || siteid == 0){
             $('#exampleModal').modal('show'); // Abrir modal
-            document.getElementById("resposta").innerHTML = "Selecione o site e/ou a tenda"
-            console.log (tendaId + siteid)
+            document.getElementById("resposta").innerHTML = "Selecione a tenda"
+            //console.log (tendaId + siteid)
     }
 }
   

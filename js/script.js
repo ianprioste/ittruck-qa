@@ -41,6 +41,7 @@ document.getElementById('sites').addEventListener('change', () =>{
 
   var siteid = document.getElementById("sites").value;
   tendas.length = 0;
+  console.log(siteid)
 
   $.ajax({
     type: "GET",
