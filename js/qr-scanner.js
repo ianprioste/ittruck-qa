@@ -23,7 +23,7 @@ let reading = true;
 
 function setResult(label, result) {
     label.textContent = result.data;
-    
+   
     camQrResultTimestamp.textContent = new Date().toString();
     label.style.color = 'teal';
     clearTimeout(label.highlightTimeout);
@@ -87,10 +87,7 @@ function setResult(label, result) {
                     document.getElementById("resposta").innerHTML = "Selecione o Site"
 
                 }
-
-
             });
-
 
         });
 
