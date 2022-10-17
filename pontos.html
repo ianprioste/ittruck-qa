@@ -27,7 +27,7 @@
   <script type="module" src="/js/search.js"></script> 
 
 
-  <title>MVP IT Truck QA - BURCAR QR CODE</title>
+  <title>MVP IT Truck QA - Consultar Pontos</title>
 
 
 </head>
@@ -38,29 +38,34 @@
       <img src="/scr/img/logo.png" alt="">
     </div>
     <div class="d-flex justify-content-center">
-      <h1>Buscar QR Code</h1>
+      <h1>Consulte seus Pontos!</h1>
     </div>
 
     <div class= "d-flex justify-content-center">
       <div class="col-lg-10">
         <form class="form-row">
-          <div class="col-auto">
-            <label for="InputEmail">Digite o endereço de e-mail</label>
-            <input type="email" class="form-control form-control-lg" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-            <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+          <div class="col-auto" style="margin-top: 30px ;">
+            <label for="InputEmail"><h2>Digite seu e-mail</h2></label>
+            <input type="email" class="form-control form-control-lg" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <span id="erro"></span>
           </div>
-          <div class="col-auto mb-2">
-            <button type="button" class="btn btn-primary mb-2" id="submitemail">Buscar</button>
+          <div class="col-auto mb-2 text-center"  style="margin-top: 30px ;">
+            <button type="button" id="btnsearch" class="btn btn-primary mb-2 " style="background-color:#00617F; border-color:#00617F; border-radius: 55px; width: 155px; height: 35px; margin-top: 15px;" >Buscar</button>
           </div>
         </form>
-                  
-        <h3><span id="nome"></span></h3>
-        <h4><span id="pontos"></span></h4>
-        
+        <div id="result" class="d-lg-grid justify-content-center invisible" style="text-align: center;">  
+          <h2>Bem-vindo(a)</h2>
+            <h3><span id="nome" style="font-size:24px"></span></h3>
+            <h3 style="margin-top: 30px ;">Pontuação:</h3>
+            <h2><span id="pontos" style="font-size:70px;"></span></br>pontos</h4>
+            <h3 style="margin-top:30px">Categoria:</h3>
+            <h2><span id="categoria" style="font-size: 70px;"></span></br>
+            <span id="msg"></span></h2>
+        </div>
       </div>
-  </div>
-
     </div>
+
+  </div>
       
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 

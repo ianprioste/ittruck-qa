@@ -1,8 +1,21 @@
 // BUSCAR EMAIL 
 
-document.getElementById('submitemail').addEventListener('click', () => {
-    var email =  document.getElementById('InputEmail').value;
-    
+var input =  document.getElementById('email');
+
+input.addEventListener('keypress', function(event){
+
+    if(event.key == "Enter"){
+        event.preventDefault();
+        document.getElementById("btnsearch").click()
+    }
+
+});
+
+
+document.getElementById("btnsearch").addEventListener('click', ()=>{
+
+    var email =  document.getElementById('email').value
+
     if(email.length !=0){
         $.ajax({
             type: "GET",
@@ -16,18 +29,46 @@ document.getElementById('submitemail').addEventListener('click', () => {
 
             success: function (data) {
 
-            console.log(data);
+                if(data.status == 200){
+                    var pontos = data.pontos
 
-            document.getElementById("nome").innerHTML = data.nome
-            document.getElementById("pontos").innerHTML = data.pontos
+                    console.log(data)
 
+                    if(pontos>=2300){
+                        var categoria = "A"
+                        var msg = "Você já está na ELITE!"
+                    } else if(pontos<2300 & pontos>=1200){
+                        var categoria = "B"
+                        var msg = `Faltam ${2300-pontos} para você atingir a categoria A`
+                    } else {
+                        var categoria = "C"
+                        var msg = `Faltam ${1200-pontos} para você atingir a categoria B`
+                    }
+                
+                    document.getElementById("nome").innerHTML = data.nome
+                    document.getElementById("pontos").innerHTML = data.pontos
+                    document.getElementById("categoria").innerHTML = categoria
+                    document.getElementById("msg").innerHTML = msg
+
+                    document.getElementById("erro").innerHTML = "";
+
+
+                    document.getElementById("result").classList.remove('invisible');
+
+                }
+
+                else{
+                    console.log(data)
+                    document.getElementById("result").classList.add('invisible');
+                    document.getElementById("erro").innerHTML = data.nome;
+                }
 
             }
 
         })
+
     }
     else
       console.log("Is empty")
-  
-  });
-  
+
+});
