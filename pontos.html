@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="style/style.css">
 
   <script type="module" src="/js/search.js"></script> 
+  <script type="text/javascript" src="./js/qrcode.js"></script>
 
 
   <title>MVP IT Truck QA - Consultar Pontos</title>
@@ -46,7 +47,7 @@
         <form class="form-row">
           <div class="col-auto" style="margin-top: 30px ;">
             <label for="InputEmail"><h2>Digite seu e-mail</h2></label>
-            <input type="email" class="form-control form-control-lg" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control form-control-lg" id="email" value="ian.prioste@bayer.com" aria-describedby="emailHelp" placeholder="Enter email">
             <span id="erro"></span>
           </div>
           <div class="col-auto mb-2 text-center"  style="margin-top: 30px ;">
@@ -56,20 +57,74 @@
         <div id="result" class="d-lg-grid justify-content-center invisible" style="text-align: center;">  
           <h2>Bem-vindo(a)</h2>
             <h3><span id="nome" style="font-size:24px"></span></h3>
+            <div id="qrcode" style="width:100px; height:100px; margin:15px auto;"></div>
             <h3 style="margin-top: 30px ;">Pontuação:</h3>
             <h2><span id="pontos" style="font-size:70px;"></span></br>pontos</h4>
             <h3 style="margin-top:30px">Categoria:</h3>
             <h2><span id="categoria" style="font-size: 70px;"></span></br>
             <span id="msg"></span></h2>
+            <span id="idqrcode"></span>
+            <div class="invisible" id="container"></div>
+            <input class="invisible" id="textqrcode"/>
         </div>
       </div>
     </div>
-
   </div>
+
+
       
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+ 
+ <script type="module">
+
+    import {search} from '/js/search.js'
+
+    document.getElementById('email').addEventListener('keypress', function(event){
+
+      if(event.key == "Enter"){
+          event.preventDefault();
+          document.getElementById("btnsearch").click()
+      }
+    });
+    
+    document.getElementById("btnsearch").addEventListener('click', ()=>{
+
+      document.getElementById("textqrcode").remove()
+
+      const p = Promise.resolve(search())
+      p.then(value=>{
+        var idqrcode = value.id
+        $('#container').append(
+          $(document.createElement('input')).prop({
+              type: 'text',
+              id: 'textqrcode',
+              value: "0000000"+idqrcode
+            })
+          );
+
+          makeCode()
+
+      }).catch(err=>{
+        console.log(err)
+      })
 
 
+
+    })
+
+
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 100,
+        height : 100
+    });
+
+    function makeCode () {	
+    
+        var elText = document.getElementById("textqrcode");
+        qrcode.makeCode(elText.value);
+    }
+
+  </script>
 </body>
 
 </html>
